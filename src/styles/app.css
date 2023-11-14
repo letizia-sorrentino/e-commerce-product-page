@@ -1,6 +1,19 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  height: 30%;
+  width: auto;
+}
+
+.attribution {
+  font-size: 11px;
   text-align: center;
-}/*# sourceMappingURL=app.css.map */
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+

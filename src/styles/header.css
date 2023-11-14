@@ -1,0 +1,45 @@
+.headerContainer {
+  /* display: flex; */
+  height: 3rem;
+  width: 100vw;
+}
+
+/* Burger Container */
+.burgerContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.burgerMenu {
+  width: 1rem;
+  height: 1rem;
+}
+
+.logo {
+  width: auto;
+  height: 1rem;
+}
+
+
+/* Account */
+.account {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+.iconCart {
+  width: 1rem;
+  height: 1rem;
+
+}
+
+.avatar {
+  /* width: 50%; */
+  /* height: auto; */
+}
