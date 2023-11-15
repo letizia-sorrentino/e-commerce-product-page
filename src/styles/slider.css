@@ -1,4 +1,29 @@
 .sliderImage {
     width: 100vw;
     height: auto;
+    position: relative;
+}
+
+.inactive {
+    display: none;
+}
+
+.arrowNext {
+    position: absolute;
+    background-color: white;
+    top: 14rem;
+    right: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+.arrowPrev {
+    position: absolute;
+    background-color: white;
+    top: 14rem;
+    left: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 2rem;
+    z-index: 1;
 }

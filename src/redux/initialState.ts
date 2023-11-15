@@ -1,7 +1,9 @@
 export interface StateType {
-    
-  }
-  
-  export const initialState: StateType = {
-    
-  };
+  images: [];
+  currentIndex: number;
+}
+
+export const initialState: StateType = {
+  images: [],
+  currentIndex: 0,
+};

@@ -1,37 +1,26 @@
 .headerContainer {
-  /* display: flex; */
-  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
   width: 100vw;
 }
 
 /* Burger Container */
-.burgerContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
-  margin-left: 1rem;
-}
 
 .burgerMenu {
   width: 1rem;
   height: 1rem;
+  margin-left: 0.5rem;
 }
 
 .logo {
   width: auto;
   height: 1rem;
+  margin-left: 1rem;
 }
 
 
 /* Account */
-.account {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  margin-right: 1rem;
-}
 
 .iconCart {
   width: 1rem;
@@ -40,6 +29,7 @@
 }
 
 .avatar {
-  /* width: 50%; */
-  /* height: auto; */
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }
