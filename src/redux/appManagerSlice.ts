@@ -22,12 +22,19 @@ export const appManagerSlice = createSlice({
       state.currentIndex =
         (state.currentIndex - 1 + state.images.length) % state.images.length;
     },
+
+    setBurgerOpen: (state) => {
+      state.burgerOpen = !state.burgerOpen;
+    },
   },
 });
 
-export const { setImages, nextImage, prevImage } = appManagerSlice.actions;
+export const { setImages, nextImage, prevImage, setBurgerOpen } =
+  appManagerSlice.actions;
 export const selectImages = (state: RootState) => state.appManager.images;
 export const selectCurrentIndex = (state: RootState) =>
   state.appManager.currentIndex;
+export const selectBurgerOpen = (state: RootState) =>
+  state.appManager.burgerOpen;
 
 export default appManagerSlice.reducer;
