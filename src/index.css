@@ -30,7 +30,12 @@ body {
   min-height: 100vh;
 }
 
-
+.AppMain {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
 
 button {
   background: none;
@@ -42,11 +47,6 @@ button {
 }
 
 button:hover {}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 ul {
   list-style-type: none;

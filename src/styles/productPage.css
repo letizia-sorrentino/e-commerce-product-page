@@ -1,3 +1,44 @@
-.brand {
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.discountedPrice {
     font-weight: 700;
+    font-size: 2rem;
+}
+
+.discount {
+    color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    font-size: 0.9rem;
+    background-color: hsl(26, 92%, 80%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+}
+
+.fullPrice {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: hsl(220, 14%, 75%);
+    text-decoration: line-through;
+}
+
+
+
+.productInfoContainer {
+    margin: 0 2rem;
+}
+
+.brand {
+    color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.productDescription {
+    color: hsl(219, 9%, 45%);
 }

@@ -1,11 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { initialState } from "./initialState";
 import { RootState } from "./store";
+
+type StateType = {
+  images: string[];
+  currentIndex: number;
+  burgerOpen: boolean;
+};
+
+const initialState: StateType = {
+  images: [],
+  currentIndex: 0,
+  burgerOpen: false,
+};
 
 export const appManagerSlice = createSlice({
   name: "appManager",
   initialState,
-
   reducers: {
     //set the images in the state
     setImages: (state, action) => {

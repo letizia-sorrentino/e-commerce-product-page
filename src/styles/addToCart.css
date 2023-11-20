@@ -1,0 +1,46 @@
+
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.quantiyButtonContainer {
+    display: grid;
+    grid-template-columns: 3rem 1fr 3rem;
+    align-items: center;
+    justify-items: center;
+    background-color: hsl(223, 64%, 98%);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+    width: 80vw;
+
+}
+
+.quantityButton {
+    font-weight: 700;
+    padding: 0.5rem;
+}
+
+.iconMinus,
+.iconPlus {
+    padding: 0 0.5rem;
+}
+
+.addToCartButton {
+    color: white;
+    background-color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    border-radius: 0.5rem;
+    padding: 0.75rem 0;
+    width: 80vw;
+    margin-bottom: 1rem;
+}
+
+.iconCartButton svg {
+    fill: white;
+
+}
