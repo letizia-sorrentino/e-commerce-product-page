@@ -8,6 +8,7 @@ const MobileMenu = () => {
   const closeBurgerMenu = (isBurgerOpen: boolean) => {
     dispatch(setBurgerOpen(isBurgerOpen));
   };
+
   return (
     <>
       <div className={`${isBurgerOpen ? "mobileMenu" : "hidden"}`}>

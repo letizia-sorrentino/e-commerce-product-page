@@ -39,6 +39,7 @@ const initialState: ShoppingCartState = {
       price: 250,
       quantity: 0,
     },
+    //add other products here
   ],
   totalItems: 0,
   totalCost: 0,
@@ -66,12 +67,16 @@ export const cartSlice = createSlice({
 
     increaseQuantity: (state, action) => {
       const cartItem = state.items.find((item) => item.id === action.payload);
-      cartItem.quantity = cartItem.quantity + 1;
+      if (cartItem) {
+        cartItem.quantity + 1;
+      }
     },
 
     decreaseQuantity: (state, action) => {
       const cartItem = state.items.find((item) => item.id === action.payload);
-      cartItem.quantity = cartItem.quantity - 1;
+      if (cartItem && cartItem.quantity > 0) {
+        cartItem.quantity - 1;
+      }
     },
 
     getTotal: (state) => {
@@ -99,6 +104,5 @@ export const {
 } = cartSlice.actions;
 
 export const selectItems = (state: RootState) => state.cart.items;
-export const selectCartItem = (state: RootState) => state.cart.items;
 export const selectTotalItems = (state: RootState) => state.cart.totalItems;
 export default cartSlice.reducer;

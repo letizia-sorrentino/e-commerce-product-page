@@ -1,8 +1,8 @@
 .headerContainer {
   display: flex;
   justify-content: space-between;
-  height: 4rem;
-  width: 100vw;
+  align-items: center;
+  margin: 1rem 0.5rem;
 }
 
 .hidden {
@@ -39,12 +39,9 @@
 
 }
 
-
-
 .logo {
   width: auto;
   height: 1rem;
-  margin-left: 1rem;
 }
 
 .desktopMenu {
