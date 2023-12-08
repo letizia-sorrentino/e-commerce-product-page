@@ -21,22 +21,28 @@
   flex-direction: column;
   position: absolute;
   background-color: white;
-  width: 70vw;
+  width: 60vw;
   height: 100vh;
   z-index: 2;
+  top: 0;
 }
 
 .iconClose {
   width: 1rem;
   height: 1rem;
-  margin-left: 0.5rem;
+  margin: 2rem 0 1rem 0.5rem;
 }
 
 .flex {
   display: flex;
   flex-direction: column;
   margin-left: 0.5rem;
+  font-weight: 700;
+  color: hsl(220, 13%, 13%);
+}
 
+.flex li {
+  margin-top: 1.5rem;
 }
 
 .logo {
