@@ -24,15 +24,15 @@ export const appManagerSlice = createSlice({
       state.images = action.payload;
     },
 
-    //action to move to the next image in the slider
-    nextImage: (state) => {
-      state.currentIndex = state.currentIndex + (1 % state.images.length);
-    },
-
     //action to go back to the prev image in the slider
     prevImage: (state) => {
       state.currentIndex =
         (state.currentIndex - 1 + state.images.length) % state.images.length;
+    },
+
+    //action to move to the next image in the slider
+    nextImage: (state) => {
+      state.currentIndex = (state.currentIndex + 1) % state.images.length;
     },
 
     setBurgerOpen: (state) => {

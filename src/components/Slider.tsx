@@ -41,7 +41,7 @@ const Slider = () => {
           className="arrowPrev"
           src={iconPrev}
           alt="icon-previous"
-          onClick={next}
+          onClick={prev}
         />
         {images.map((image, index) => (
           <img
@@ -58,7 +58,7 @@ const Slider = () => {
           className="arrowNext"
           src={iconNext}
           alt="icon-next"
-          onClick={prev}
+          onClick={next}
         />
       </div>{" "}
     </>
