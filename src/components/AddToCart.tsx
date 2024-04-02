@@ -7,7 +7,7 @@ import {
   decreaseQuantity,
   increaseQuantity,
   addToCart,
-  clearCart,
+  //clearCart,
   selectItems,
 } from "../redux/cartSlice";
 
@@ -24,12 +24,12 @@ const AddToCart = () => {
             src={iconMinus}
             alt="iconMinus"
             onClick={() => {
-              if (items[0].quantity === 1) {
-                dispatch(clearCart());
-              } else {
+              // if (items[0].quantity === 1) {
+              //   dispatch(clearCart());
+              // } else {
                 dispatch(decreaseQuantity(items[0].id));
                 console.log("decrease quantity");
-              }
+              // }
             }}
           />
           <button className="quantityButton">{items[0].quantity}</button>
@@ -43,17 +43,17 @@ const AddToCart = () => {
             }}
           />
         </div>
-        <div className="addToCartButtonContainer"> 
-        <img className="iconCartButton" src={iconCart} alt="iconCart" />
-        <button
-          className="addToCartButton"
-          onClick={() => {
-            dispatch(addToCart(items[0]));
-            console.log(items);
-          }}
-        >
-          Add to cart
-        </button>
+        <div className="addToCartButtonContainer">
+          <img className="iconCartButton" src={iconCart} alt="iconCart" />
+          <button
+            className="addToCartButton"
+            onClick={() => {
+              dispatch(addToCart(items[0]));
+              console.log(items);
+            }}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </>

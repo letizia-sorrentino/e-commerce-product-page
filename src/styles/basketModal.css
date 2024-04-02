@@ -1,0 +1,16 @@
+/* Basket Modal */
+
+.hiddenModal {
+    display: none;
+  }
+  
+  .showModal {
+    position: absolute;
+    background-color: white;
+    border-radius: 0.5rem;
+    top: 4rem;
+    z-index: 2;
+    text-align: center;
+    height: 30vh;
+  }
+  

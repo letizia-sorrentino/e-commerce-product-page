@@ -39,7 +39,7 @@ const initialState: ShoppingCartState = {
       price: 250,
       quantity: 0,
     },
-    //add other products here
+    // add other products here
   ],
   totalItems: 0,
   totalCost: 0,
@@ -50,48 +50,45 @@ export const cartSlice = createSlice({
   initialState,
 
   reducers: {
+    //Adding an item to the cart
     addToCart: (state, action) => {
-      const newItem = action.payload;
-      const existingItem = state.items.find((item) => item.id === newItem.id);
+      const existingItem = state.items.find(
+        (item) => item.id === action.payload.id
+      );
 
       if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity++;
       } else {
-        state.items.push({ ...newItem, quantity: 1 });
+        state.items.push({ ...action.payload, quantity: 1 });
       }
     },
-    removeFromCart: (state, action) => {
-      const itemId = action.payload;
-      state.items = state.items.filter((item) => item.id !== itemId);
-    },
+
+    // Increasing the quantity of an item in the cart
 
     increaseQuantity: (state, action) => {
       const cartItem = state.items.find((item) => item.id === action.payload);
       if (cartItem) {
-        cartItem.quantity + 1;
+        cartItem.quantity++;
       }
     },
 
+    //Decreasing the quantity of an item in the cart
     decreaseQuantity: (state, action) => {
       const cartItem = state.items.find((item) => item.id === action.payload);
       if (cartItem && cartItem.quantity > 0) {
-        cartItem.quantity - 1;
+        cartItem.quantity--;
       }
     },
 
-    getTotal: (state) => {
-      let quantity = 0;
-      let total = 0;
-      state.items.forEach((item) => {
-        quantity += item.quantity;
-        total += item.quantity * item.price;
-      });
-      state.totalItems = quantity;
-      state.totalCost = total;
+    // Removing an item from the cart
+    removeFromCart: (state, action) => {
+      state.items = state.items.filter((item) => item.id !== action.payload);
     },
-    clearCart: (state) => {
-      state.items = [];
-    },
+
+    // // Empty the cart
+    // clearCart: (state) => {
+    //   state.items = [];
+    // },
   },
 });
 export const {
@@ -99,8 +96,7 @@ export const {
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
-  getTotal,
-  clearCart,
+  // clearCart,
 } = cartSlice.actions;
 
 export const selectItems = (state: RootState) => state.cart.items;

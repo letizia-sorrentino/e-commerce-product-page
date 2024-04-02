@@ -1,9 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-  setBurgerOpen,
+  openBurger,
   selectBurgerOpen,
-  setBasketOpen,
-  selectBasketOpen,
+  toggleBasket,
 } from "../redux/appManagerSlice";
 import burgerIcon from "../assets/icon-menu.svg";
 import logo from "../assets/logo.svg";
@@ -12,19 +11,20 @@ import avatar from "../assets/image-avatar.png";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import "../styles/header.css";
+import BasketModal from "./BasketModal";
 
 const Header = () => {
   const isBurgerOpen = useSelector(selectBurgerOpen);
-  const isBasketOpen = useSelector(selectBasketOpen);
 
   const dispatch = useDispatch();
 
-  const openBurgerMenu = (isBurgerOpen: boolean) => {
-    dispatch(setBurgerOpen(!isBurgerOpen));
+  const openBurgerMenu = () => {
+    dispatch(openBurger());
   };
 
-  const toggleBasket = () => {
-    dispatch(setBasketOpen());
+  const toggleCart = () => {
+    dispatch(toggleBasket());
+    console.log("clicked");
   };
 
   return (
@@ -36,18 +36,19 @@ const Header = () => {
               className={`${isBurgerOpen ? "hidden" : "burgerIcon"}`}
               src={burgerIcon}
               alt="burger-icon"
-              onClick={() => openBurgerMenu(isBurgerOpen)}
+              onClick={() => openBurgerMenu()}
             />
             <MobileMenu />
           </div>
           <img className="logo" src={logo} alt="logo" />
           <DesktopMenu />
           <img
-            className="iconCart"
+            className="cartIcon"
             src={cart}
             alt="icon-cart"
-            onClick={() => toggleBasket()}
+            onClick={() => toggleCart()}
           />
+          <BasketModal />
           <img className="avatar" src={avatar} alt="avatar" />
         </div>
       </header>

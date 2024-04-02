@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectBurgerOpen, setBurgerOpen } from "../redux/appManagerSlice";
+import { selectBurgerOpen, closeBurger } from "../redux/appManagerSlice";
 import iconClose from "../assets/icon-close.svg";
 const MobileMenu = () => {
   const isBurgerOpen = useSelector(selectBurgerOpen);
   const dispatch = useDispatch();
 
-  const closeBurgerMenu = (isBurgerOpen: boolean) => {
-    dispatch(setBurgerOpen(isBurgerOpen));
+  const closeBurgerMenu = () => {
+    dispatch(closeBurger());
   };
 
   return (
@@ -16,7 +16,7 @@ const MobileMenu = () => {
           className={`${isBurgerOpen ? "iconClose" : "hidden"}`}
           src={iconClose}
           alt="icon-close"
-          onClick={() => closeBurgerMenu(isBurgerOpen)}
+          onClick={() => closeBurgerMenu()}
         />
         <ul className={`${isBurgerOpen ? "flex" : "hidden"}`}>
           <li>Collections</li>

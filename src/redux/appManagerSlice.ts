@@ -35,18 +35,43 @@ export const appManagerSlice = createSlice({
       state.currentIndex = (state.currentIndex + 1) % state.images.length;
     },
 
-    setBurgerOpen: (state) => {
+    openBurger: (state) => {
+      state.burgerOpen = true;
+    },
+
+    closeBurger: (state) => {
+      state.burgerOpen = false;
+    },
+
+    toggleBurger: (state) => {
       state.burgerOpen = !state.burgerOpen;
     },
 
-    setBasketOpen: (state) => {
+    openBasket: (state) => {
+      state.basketOpen = true;
+    },
+
+    closeBasket: (state) => {
+      state.basketOpen = false;
+    },
+
+    toggleBasket: (state) => {
       state.basketOpen = !state.basketOpen;
     },
   },
 });
 
-export const { setImages, nextImage, prevImage, setBurgerOpen, setBasketOpen } =
-  appManagerSlice.actions;
+export const {
+  setImages,
+  nextImage,
+  prevImage,
+  openBurger,
+  closeBurger,
+  toggleBurger,
+  openBasket,
+  closeBasket,
+  toggleBasket,
+} = appManagerSlice.actions;
 export const selectImages = (state: RootState) => state.appManager.images;
 export const selectCurrentIndex = (state: RootState) =>
   state.appManager.currentIndex;
