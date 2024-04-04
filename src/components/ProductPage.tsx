@@ -1,32 +1,41 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import data from "../data/data.json";
 import AddToCart from "./AddToCart";
-
-import { selectItems } from "../redux/cartSlice";
+import { fetchProducts, selectProducts } from "../redux/productSlice";
 import "../styles/productPage.css";
 
 const ProductPage = () => {
-  const items = useSelector(selectItems);
+  const dispatch = useDispatch();
+  const products = useSelector(selectProducts);
 
-  const applyDiscont = () => {
-    const discount = 0.5;
-    const price = items[0].price;
-    return discount * price;
-  };
+  // send products to the store
+  useEffect(() => {
+    const fetchedProducts = [data];
+    dispatch(fetchProducts(fetchedProducts));
+    console.log(fetchedProducts);
+  }, [dispatch]);
 
   return (
-    <>
-      <div className="productInfoContainer">
-        <p className="brand">{items[0].brand}</p>
-        <h2 className="productName">{items[0].name}</h2>
-        <p className="productDescription">{items[0].description}</p>
-      </div>
-      <div className="priceContainer">
-        <p className="discountedPrice">${applyDiscont().toFixed(2)} </p>
-        <p className="discount">50%</p>
-        <p className="fullPrice"> ${items[0].price.toFixed(2)}</p>
-      </div>
-      <AddToCart />
-    </>
+    <div>
+      {products.map((product) => (
+        <div className="productContainer" key={product.id}>
+          <div className="productInfoContainer">
+            <p className="brand">{product.brand}</p>
+            <h2 className="productName">{product.name}</h2>
+            <p className="productDescription">{product.description}</p>
+          </div>
+          <div className="priceContainer">
+            <p className="discountedPrice">
+              ${(() => (1 - 0.5) * product.price.toFixed(2))()}
+            </p>
+            <p className="discount">50%</p>
+            <p className="fullPrice">{product.price.toFixed(2)}</p>
+          </div>
+          <AddToCart />
+        </div>
+      ))}
+    </div>
   );
 };
 export default ProductPage;

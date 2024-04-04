@@ -29,18 +29,7 @@ type ShoppingCartState = {
 
 // define initialState for the shopping cart
 const initialState: ShoppingCartState = {
-  items: [
-    {
-      id: 1,
-      brand: "SNEAKER COMPANY",
-      name: "Fall Limited Edition Sneakers",
-      description:
-        "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-      price: 250,
-      quantity: 0,
-    },
-    // add other products here
-  ],
+  items: [],
   totalItems: 0,
   totalCost: 0,
 };
@@ -64,7 +53,6 @@ export const cartSlice = createSlice({
     },
 
     // Increasing the quantity of an item in the cart
-
     increaseQuantity: (state, action) => {
       const cartItem = state.items.find((item) => item.id === action.payload);
       if (cartItem) {
@@ -85,10 +73,22 @@ export const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
-    // // Empty the cart
-    // clearCart: (state) => {
-    //   state.items = [];
-    // },
+    //
+    getTotal: (state) => {
+      let quantity = 0;
+      let total = 0;
+      state.items.forEach((item) => {
+        quantity += item.quantity;
+        total += item.quantity * item.price;
+      });
+      state.totalItems = quantity;
+      state.totalCost = total;
+    },
+
+    // Empty the cart
+    clearCart: (state) => {
+      state.items = [];
+    },
   },
 });
 export const {
@@ -96,7 +96,8 @@ export const {
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
-  // clearCart,
+  getTotal,
+  clearCart,
 } = cartSlice.actions;
 
 export const selectItems = (state: RootState) => state.cart.items;

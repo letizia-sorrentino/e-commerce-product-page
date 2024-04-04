@@ -7,13 +7,13 @@ import {
   decreaseQuantity,
   increaseQuantity,
   addToCart,
-  //clearCart,
-  selectItems,
+  clearCart,
 } from "../redux/cartSlice";
+import { selectProducts } from "../redux/productSlice";
 
 const AddToCart = () => {
   const dispatch = useDispatch();
-  const items = useSelector(selectItems);
+  const items = useSelector(selectProducts);
 
   return (
     <>
@@ -24,21 +24,21 @@ const AddToCart = () => {
             src={iconMinus}
             alt="iconMinus"
             onClick={() => {
-              // if (items[0].quantity === 1) {
-              //   dispatch(clearCart());
-              // } else {
-                dispatch(decreaseQuantity(items[0].id));
+              if (items.quantity === 1) {
+                dispatch(clearCart());
+              } else {
+                dispatch(decreaseQuantity(items.id));
                 console.log("decrease quantity");
-              // }
+              }
             }}
           />
-          <button className="quantityButton">{items[0].quantity}</button>
+          <button className="quantityButton">{items.quantity}</button>
           <img
             className="iconPlus"
             src={iconPlus}
             alt="iconPlus"
             onClick={() => {
-              dispatch(increaseQuantity(items[0].id));
+              dispatch(increaseQuantity(items.id));
               console.log("increase quantity");
             }}
           />
@@ -48,7 +48,7 @@ const AddToCart = () => {
           <button
             className="addToCartButton"
             onClick={() => {
-              dispatch(addToCart(items[0]));
+              dispatch(addToCart(items));
               console.log(items);
             }}
           >

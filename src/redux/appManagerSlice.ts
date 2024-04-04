@@ -8,11 +8,13 @@ type StateType = {
   basketOpen: boolean;
 };
 
+
 const initialState: StateType = {
   images: [],
   currentIndex: 0,
   burgerOpen: false,
   basketOpen: false,
+  
 };
 
 export const appManagerSlice = createSlice({
