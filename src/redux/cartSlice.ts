@@ -1,23 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
-
-//define a typefor the product item
-export type Item = {
-  id: number;
-  brand: string;
-  name: string;
-  description: string;
-  price: number;
-};
+import { Product } from "./productSlice";
 
 //define a type for the item in the cart
 type CartItem = {
-  id: number;
-  brand: string;
-  name: string;
-  description: string;
-  price: number;
+  productId: number;
   quantity: number;
+  price: number;
+  product?: Product;
 };
 
 // define the shopping cart state
@@ -42,7 +32,7 @@ export const cartSlice = createSlice({
     //Adding an item to the cart
     addToCart: (state, action) => {
       const existingItem = state.items.find(
-        (item) => item.id === action.payload.id
+        (item) => item.productId === action.payload.id
       );
 
       if (existingItem) {
@@ -54,7 +44,9 @@ export const cartSlice = createSlice({
 
     // Increasing the quantity of an item in the cart
     increaseQuantity: (state, action) => {
-      const cartItem = state.items.find((item) => item.id === action.payload);
+      const cartItem = state.items.find(
+        (item) => item.productId === action.payload
+      );
       if (cartItem) {
         cartItem.quantity++;
       }
@@ -62,7 +54,9 @@ export const cartSlice = createSlice({
 
     //Decreasing the quantity of an item in the cart
     decreaseQuantity: (state, action) => {
-      const cartItem = state.items.find((item) => item.id === action.payload);
+      const cartItem = state.items.find(
+        (item) => item.productId === action.payload
+      );
       if (cartItem && cartItem.quantity > 0) {
         cartItem.quantity--;
       }
@@ -70,18 +64,20 @@ export const cartSlice = createSlice({
 
     // Removing an item from the cart
     removeFromCart: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.items = state.items.filter(
+        (item) => item.productId !== action.payload
+      );
     },
 
     //
     getTotal: (state) => {
-      let quantity = 0;
+      let itemsQuantity = 0;
       let total = 0;
       state.items.forEach((item) => {
-        quantity += item.quantity;
+        itemsQuantity += item.quantity;
         total += item.quantity * item.price;
       });
-      state.totalItems = quantity;
+      state.totalItems = itemsQuantity;
       state.totalCost = total;
     },
 

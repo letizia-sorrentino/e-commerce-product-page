@@ -6,7 +6,7 @@
     row-gap: 1rem;
 }
 
-.quantiyButtonContainer {
+.quantityButtonContainer {
     display: grid;
     grid-template-columns: 3rem 1fr 3rem;
     align-items: center;
@@ -20,7 +20,7 @@
 
 .quantityButton {
     font-weight: 700;
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
 .iconMinus,

@@ -13,7 +13,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchedProducts = [data];
     dispatch(fetchProducts(fetchedProducts));
-    console.log(fetchedProducts);
+    // console.log(fetchedProducts);
   }, [dispatch]);
 
   return (
@@ -27,7 +27,7 @@ const ProductPage = () => {
           </div>
           <div className="priceContainer">
             <p className="discountedPrice">
-              ${(() => (1 - 0.5) * product.price.toFixed(2))()}
+              ${(() => (1 - 0.5) * product.price)().toFixed(2)}
             </p>
             <p className="discount">50%</p>
             <p className="fullPrice">{product.price.toFixed(2)}</p>
