@@ -1,23 +1,17 @@
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import iconMinus from "../assets/icon-minus.svg";
 import iconPlus from "../assets/icon-plus.svg";
 import "../styles/addToCart.css";
-// import {
-//   decreaseQuantity,
-//    increaseQuantity,
-//    removeFromCart,
-// } from "../redux/cartSlice";
-// import { selectItems } from "../redux/cartSlice";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../redux/cartSlice";
+import { selectItems } from "../redux/cartSlice";
 
 const QuantityButton = () => {
-//   const dispatch = useDispatch();
-//   // const cartItems = useSelector(selectItems);
-
-
-//   // useEffect(() => {
-//   //   console.log("cartItems:", cartItems);
-//   // }, []);
-//   // console.log(cartItems);
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectItems);
 
   return (
     <>
@@ -25,11 +19,11 @@ const QuantityButton = () => {
       <div>
         {" "}
         <div className="buttonsContainer">
-          {/* {cartItems.map((cartItem) => (
+          {cartItems.map((cartItem) => (
             <div className="quantityButtonContainer" key={cartItem.productId}>
               <img
                 className="iconMinus"
-                // src={iconMinus}
+                src={iconMinus}
                 alt="iconMinus"
                 onClick={() => {
                   if (cartItem.quantity === 1) {
@@ -37,12 +31,12 @@ const QuantityButton = () => {
                   } else {
                     dispatch(decreaseQuantity(cartItem.productId));
                     console.log("decrease quantity", cartItem.quantity);
-                  } 
+                  }
                 }}
               />
-              <div className="quantityButton"> 
+              <div className="quantityButton">
                 {" "}
-                {cartItem.quantity > 0 ? cartItem.quantity : 0}{" "}
+                {cartItems.length > 0 ? cartItem.quantity : 0}{" "}
               </div>
               <img
                 className="iconPlus"
@@ -58,14 +52,11 @@ const QuantityButton = () => {
                 }}
               />
             </div>
-          ))} */}
+          ))}
 
+          {/* fake button */}
           <div className="quantityButtonContainer">
-            <img
-              className="iconMinus"
-              src={iconMinus}
-              alt="iconMinus"
-            />
+            <img className="iconMinus" src={iconMinus} alt="iconMinus" />
             <div className="quantityButton">0</div>
             <img className="iconPlus" src={iconPlus} alt="iconPlus" />
           </div>
