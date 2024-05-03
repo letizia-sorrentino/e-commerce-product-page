@@ -1,6 +1,3 @@
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { selectItems, getTotal } from "../src/redux/cartSlice";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
 import ProductPage from "./components/ProductPage";
@@ -8,13 +5,6 @@ import ProductPage from "./components/ProductPage";
 import "./styles/app.css";
 
 const App = () => {
-  // const items = useSelector(selectItems);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getTotal());
-  // }, [items, dispatch]);
-
   return (
     <>
       <div className="AppMain">

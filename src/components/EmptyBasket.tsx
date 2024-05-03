@@ -2,7 +2,7 @@ const EmptyBasket = () => {
   return (
     <>
       <div className="emptyBasket">
-        <p>Your basket is empty.</p>
+        <p className="basketMessage">Your basket is empty.</p>
       </div>
     </>
   );

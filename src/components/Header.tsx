@@ -42,6 +42,7 @@ const Header = () => {
           </div>
           <img className="logo" src={logo} alt="logo" />
           <DesktopMenu />
+
           <img
             className="cartIcon"
             src={cart}

@@ -32,6 +32,7 @@ export const cartSlice = createSlice({
   reducers: {
     //Adding an item to the cart
     addToCart: (state, action) => {
+      const { name, price } = action.payload;
       const existingItem = state.items.find(
         (item) => item.productId === action.payload.id
       );
@@ -39,7 +40,7 @@ export const cartSlice = createSlice({
       if (existingItem) {
         existingItem.quantity++;
       } else {
-        state.items.push({ ...action.payload, quantity: 1 });
+        state.items.push({ ...action.payload, name, price, quantity: 1 });
       }
     },
 
@@ -100,8 +101,6 @@ export const {
 export const selectItems = (state: RootState) => state.cart.items;
 export const selectTotalItems = (state: RootState) => state.cart.totalItems;
 export default cartSlice.reducer;
-
-
 
 // // Cart Slice with InitialState
 // import { createSlice } from "@reduxjs/toolkit";
