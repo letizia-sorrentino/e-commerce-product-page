@@ -79,13 +79,17 @@
 }
 
 
-
-
 /* Media Queries */
 @media (min-width:960px) {
 
   .burgerContainer {
     display: none;
+  }
+
+  .headerContainer {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+
   }
 
   .desktopMenu {

@@ -19,8 +19,8 @@ const QuantityButton = () => {
       <div>
         {" "}
         <div className="buttonsContainer">
-          {cartItems.map((cartItem) => (
-            <div className="quantityButtonContainer" key={cartItem.productId}>
+          {cartItems.map((cartItem, index) => (
+            <div className="quantityButtonContainer" key={index}>
               <img
                 className="iconMinus"
                 src={iconMinus}
@@ -34,10 +34,7 @@ const QuantityButton = () => {
                   }
                 }}
               />
-              <div className="quantityButton">
-                {" "}
-                {cartItems.length > 0 ? cartItem.quantity : 0}{" "}
-              </div>
+              <div className="quantityButton"> {cartItem.quantity} </div>
               <img
                 className="iconPlus"
                 src={iconPlus}
@@ -55,11 +52,13 @@ const QuantityButton = () => {
           ))}
 
           {/* fake button */}
-          <div className="quantityButtonContainer">
-            <img className="iconMinus" src={iconMinus} alt="iconMinus" />
-            <div className="quantityButton">0</div>
-            <img className="iconPlus" src={iconPlus} alt="iconPlus" />
-          </div>
+          {cartItems.length === 0 && (
+            <div className="quantityButtonContainer">
+              <img className="iconMinus" src={iconMinus} alt="iconMinus" />
+              <div className="quantityButton">0</div>
+              <img className="iconPlus" src={iconPlus} alt="iconPlus" />
+            </div>
+          )}
         </div>
       </div>
     </>

@@ -15,7 +15,6 @@
     border-radius: 0.5rem;
     padding: 0.25rem 0;
     width: 80vw;
-
 }
 
 .quantityButton {
@@ -27,7 +26,6 @@
 .iconPlus {
     padding: 0 0.5rem;
 }
-
 
 .addToCartButtonContainer {
     border-radius: 0.5rem;
@@ -50,4 +48,33 @@
 .iconCartButton {
     filter: brightness(10);
     height: 75%;
+}
+
+/* Media Queries */
+@media (min-width:960px) {
+
+    .buttonsContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-left: 1rem;
+    }
+
+    .quantityButtonContainer {
+        width: auto;
+    }
+
+    .quantityButton {
+        padding: 0.5rem;
+    }
+
+    .addToCartButtonContainer {
+        width: 20vw;
+    }
+
+
+
+
 }

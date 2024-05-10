@@ -40,7 +40,12 @@ export const cartSlice = createSlice({
       if (existingItem) {
         existingItem.quantity++;
       } else {
-        state.items.push({ ...action.payload, name, price, quantity: 1 });
+        state.items.push({
+          ...action.payload,
+          name: name,
+          price: price,
+          quantity: 1,
+        });
       }
     },
 

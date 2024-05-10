@@ -27,3 +27,21 @@
     border-radius: 2rem;
     z-index: 1;
 }
+
+/* Media Queries */
+@media (min-width:960px) {
+    .sliderContainer {
+        width: 25vw;
+        margin: 2rem;
+    }
+
+    .sliderImage {
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+
+    .arrowNext,
+    .arrowPrev {
+        display: none;
+    }
+}

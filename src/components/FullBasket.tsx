@@ -24,14 +24,14 @@ const FullBasket = () => {
       <>
         <div className="fullBasket">
           <img src={productImage} className="productImage" alt="productImage" />
-          {cartItems.map((cartItem) => (
-            <div className="cartItemContainer">
+          {cartItems.map((cartItem, index) => (
+            <div className="cartItemContainer" key={index}>
               <p className="cartItemName">
-                {cartItem.name}Fall Limited Edition Sneakers
+                {cartItem.name}
               </p>
               <div className="cartItemTotal">
                 {" "}
-                <p className="cartItemPrice">${cartItem.price}125 x</p>
+                <p className="cartItemPrice">${cartItem.price} x</p>
                 <p>{totalItems}</p>
                 <p> ${totalCost}</p>{" "}
               </div>
