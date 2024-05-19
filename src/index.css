@@ -28,13 +28,23 @@ body {
   min-height: 100vh;
 }
 
-.AppMain {
+.appMain {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
 }
 
+body.overlay::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  z-index: 2;
+  content: "";
+}
 
 button {
   background: none;

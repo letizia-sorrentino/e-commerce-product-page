@@ -24,33 +24,35 @@ const Header = () => {
 
   const toggleCart = () => {
     dispatch(toggleBasket());
-    console.log("clicked");
   };
 
   return (
     <>
       <header>
         <div className="headerContainer">
-          <div className="burgerContainer">
-            <img
-              className={`${isBurgerOpen ? "hidden" : "burgerIcon"}`}
-              src={burgerIcon}
-              alt="burger-icon"
-              onClick={() => openBurgerMenu()}
-            />
-            <MobileMenu />
+          <div className="leftContainer">
+            <div className="burgerContainer">
+              <img
+                className={`${isBurgerOpen ? "hidden" : "burgerIcon"}`}
+                src={burgerIcon}
+                alt="burger-icon"
+                onClick={() => openBurgerMenu()}
+              />
+              <MobileMenu />
+            </div>
+            <img className="logo" src={logo} alt="logo" />
+            <DesktopMenu />
           </div>
-          <img className="logo" src={logo} alt="logo" />
-          <DesktopMenu />
-
-          <img
-            className="cartIcon"
-            src={cart}
-            alt="icon-cart"
-            onClick={() => toggleCart()}
-          />
-          <BasketModal />
-          <img className="avatar" src={avatar} alt="avatar" />
+          <div className="rightContainer">
+            <img
+              className="cartIcon"
+              src={cart}
+              alt="icon-cart"
+              onClick={() => toggleCart()}
+            />
+            <BasketModal />
+            <img className="avatar" src={avatar} alt="avatar" />
+          </div>
         </div>
       </header>
     </>
