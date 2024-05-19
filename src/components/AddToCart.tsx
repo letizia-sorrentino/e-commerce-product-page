@@ -2,14 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import iconCart from "../assets/icon-cart.svg";
 import { addToCart } from "../redux/cartSlice";
 import { selectProducts } from "../redux/productSlice";
-import { store } from "../redux/store";
+import { selectItems, increaseQuantity } from "../redux/cartSlice";
 import "../styles/addToCart.css";
-
 
 const AddToCart = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
-
+  const cartItems = useSelector(selectItems);
   return (
     <div>
       {products.map((product) => (
@@ -18,7 +17,11 @@ const AddToCart = () => {
           <button
             className="addToCartButton"
             onClick={() => {
-              store.dispatch(addToCart(product.id));
+              if (cartItems.length > 0) {
+                dispatch(increaseQuantity(product.id));
+              } else {
+                dispatch(addToCart(product));
+              }
               console.log(product);
             }}
           >

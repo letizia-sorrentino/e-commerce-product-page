@@ -5,6 +5,7 @@ import {
   getTotal,
   // removeFromCart,
   selectItems,
+  selectTotalCost,
   selectTotalItems,
 } from "../redux/cartSlice";
 import productImage from "../assets/image-product-1-thumbnail.jpg";
@@ -13,7 +14,7 @@ const FullBasket = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectItems);
   const totalItems = useSelector(selectTotalItems);
-  const totalCost = useSelector(selectTotalItems);
+  const totalCost = useSelector(selectTotalCost);
 
   useEffect(() => {
     dispatch(getTotal());
