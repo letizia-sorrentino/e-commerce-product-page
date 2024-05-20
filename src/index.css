@@ -55,8 +55,6 @@ button {
   outline: inherit;
 }
 
-/* button:hover {} */
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -68,10 +66,14 @@ ul {
 /* Desktop */
 @media (min-width:960px) {
   body {
-    margin: 0 8rem;
+    justify-content: center;
+    margin: 0;
+
   }
 
-  .AppMain {
+  .appMain {
+    flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 2rem;
   }
 }

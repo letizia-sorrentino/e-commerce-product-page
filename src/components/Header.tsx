@@ -4,18 +4,19 @@ import {
   selectBurgerOpen,
   toggleBasket,
 } from "../redux/appManagerSlice";
+import { selectTotalItems } from "../redux/cartSlice";
 import burgerIcon from "../assets/icon-menu.svg";
 import logo from "../assets/logo.svg";
 import cart from "../assets/icon-cart.svg";
 import avatar from "../assets/image-avatar.png";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
-import "../styles/header.css";
 import BasketModal from "./BasketModal";
+import "../styles/header.css";
 
 const Header = () => {
   const isBurgerOpen = useSelector(selectBurgerOpen);
-
+  const totalQuantity = useSelector(selectTotalItems);
   const dispatch = useDispatch();
 
   const openBurgerMenu = () => {
@@ -44,12 +45,17 @@ const Header = () => {
             <DesktopMenu />
           </div>
           <div className="rightContainer">
-            <img
-              className="cartIcon"
-              src={cart}
-              alt="icon-cart"
-              onClick={() => toggleCart()}
-            />
+            <div className="cartIconContainer">
+              <img
+                className="cartIcon"
+                src={cart}
+                alt="icon-cart"
+                onClick={() => toggleCart()}
+              />{" "}
+              {totalQuantity > 0 && (
+                <span className="quantitySticker">{totalQuantity}</span>
+              )}
+            </div>
             <BasketModal />
             <img className="avatar" src={avatar} alt="avatar" />
           </div>
