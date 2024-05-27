@@ -31,33 +31,7 @@
 /* Media Queries */
 @media (min-width:960px) {
     .sliderContainer {
-        width: 30vw;
-        margin: 2rem;
-        display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-areas:
-            "active active active active"
-            "inactive inactive inactive inactive";
-        column-gap: 1rem;
-    }
-
-    .sliderImage.active {
-        grid-area: active;
-        display: block;
-        width: 100%;
-        border-radius: 0.5rem;
-    }
-
-    .sliderImage.inactive {
-        grid-area: inactive;
-        display: block;
-        width: 20%;
-        border-radius: 0.5rem;
-    }
-
-    .arrowNext,
-    .arrowPrev {
         display: none;
     }
+
 }
