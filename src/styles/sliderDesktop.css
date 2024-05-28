@@ -1,18 +1,19 @@
-.sliderDesktopContainer {
+.sliderContainerDesktop {
     display: none;
 }
 
 @media (min-width:960px) {
-    .sliderDesktopContainer {
+    .sliderContainerDesktop {
         display: flex;
         flex-direction: column;
-        margin-left: 2rem;
         margin-top: 2rem;
     }
 
     .sliderImageDesktop {
         width: 30vw;
         border-radius: 0.5rem;
+        margin-bottom: 1rem;
+
     }
 
     .sliderDotsDesktop {
