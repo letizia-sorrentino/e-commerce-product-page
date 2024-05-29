@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Lightbox from "./Lightbox";
+import iconNext from "../assets/icon-next.svg";
+import iconPrev from "../assets/icon-previous.svg";
 import image1 from "../assets/image-product-1.jpg";
 import image2 from "../assets/image-product-2.jpg";
 import image3 from "../assets/image-product-3.jpg";
@@ -13,6 +14,7 @@ import {
   selectIsOpen,
   selectCurrentIndex,
 } from "../redux/lightboxSlice";
+import { nextImage, prevImage } from "../redux/appManagerSlice";
 import "../styles/sliderDesktop.css";
 
 const SliderDesktop = () => {
@@ -21,10 +23,27 @@ const SliderDesktop = () => {
   const currentIndex = useSelector(selectCurrentIndex);
   const isLightboxOpen = useSelector(selectIsOpen);
 
+  const prev = () => {
+    dispatch(prevImage());
+    console.log(currentIndex);
+  };
+  const next = () => {
+    dispatch(nextImage());
+    console.log(currentIndex);
+  };
+
   useEffect(() => {
     const fetchedImages = [image1, image2, image3, image4];
     dispatch(setImages(fetchedImages));
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isLightboxOpen) {
+      document.body.classList.add("overlay");
+    } else {
+      document.body.classList.remove("overlay");
+    }
+  }, [isLightboxOpen]);
 
   return (
     <>
@@ -45,8 +64,57 @@ const SliderDesktop = () => {
             }}
           />
         ))}
+        {/* If isLightboxOpen is true, render the Lightbox component. Otherwise, render nothing. */}
+        {isLightboxOpen && (
+          <div className="lightboxContainer">
+            <img
+              className="arrowPrev"
+              src={iconPrev}
+              alt="icon-previous"
+              onClick={prev}
+            />
+            <div className="lightboxImage">
+              {" "}
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  className={`sliderImageDesktop ${
+                    index === currentIndex ? "active" : "inactive"
+                  }`}
+                  src={image}
+                  alt={`productImageDesktop ${index + 1}`}
+                  onClick={() => {
+                    dispatch(setCurrentImage(image));
+                    dispatch(setCurrentIndex(index));
+                    console.log(currentIndex);
+                  }}
+                />
+              ))}
+            </div>
 
-        {isLightboxOpen && <Lightbox />}
+            <img
+              className="arrowNext"
+              src={iconNext}
+              alt="icon-next"
+              onClick={next}
+            />
+            <div className="sliderDotsLightbox">
+              {images.map((_, index) => (
+                <img
+                  key={index}
+                  className={`sliderDotLightbox ${
+                    index === currentIndex ? "activeDot" : "inactiveDot"
+                  }`}
+                  src={images[index]}
+                  onClick={() => {
+                    dispatch(setCurrentImage(images[index]));
+                    dispatch(setCurrentIndex(index));
+                  }}
+                ></img>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="sliderDotsDesktop">
           {images.map((_, index) => (
