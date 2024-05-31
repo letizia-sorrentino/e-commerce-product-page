@@ -43,7 +43,7 @@
         position: absolute;
         max-width: 50%;
         max-height: 50%;
-        top: 24%;
+        top: 20%;
         left: 35%;
         border-radius: 0.5rem;
         margin: auto;
@@ -51,14 +51,14 @@
 
     .arrowPrev {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 32%;
         transform: translateY(-50%);
     }
 
     .arrowNext {
         position: absolute;
-        top: 50%;
+        top: 45%;
         right: 32%;
         transform: translateY(-50%);
     }

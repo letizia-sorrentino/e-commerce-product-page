@@ -6,35 +6,41 @@ import image1 from "../assets/image-product-1.jpg";
 import image2 from "../assets/image-product-2.jpg";
 import image3 from "../assets/image-product-3.jpg";
 import image4 from "../assets/image-product-4.jpg";
-import { setImages, selectImages } from "../redux/appManagerSlice";
 import {
   setCurrentImage,
   openLightbox,
   setCurrentIndex,
   selectIsOpen,
   selectCurrentIndex,
+  setLightboxImages,
+  selectLightboxImages,
+  setNextImage,
+  setPreviousImage,
 } from "../redux/lightboxSlice";
-import { nextImage, prevImage } from "../redux/appManagerSlice";
 import "../styles/sliderDesktop.css";
 
 const SliderDesktop = () => {
   const dispatch = useDispatch();
-  const images = useSelector(selectImages);
+  const images = useSelector(selectLightboxImages);
   const currentIndex = useSelector(selectCurrentIndex);
+  const lightboxIndex = useSelector(selectCurrentIndex);
   const isLightboxOpen = useSelector(selectIsOpen);
 
   const prev = () => {
-    dispatch(prevImage());
+    dispatch(setPreviousImage());
     console.log(currentIndex);
   };
   const next = () => {
-    dispatch(nextImage());
+    dispatch(setNextImage());
     console.log(currentIndex);
   };
+  useEffect(() => {
+    console.log(lightboxIndex);
+  }, [lightboxIndex]);
 
   useEffect(() => {
     const fetchedImages = [image1, image2, image3, image4];
-    dispatch(setImages(fetchedImages));
+    dispatch(setLightboxImages(fetchedImages));
   }, [dispatch]);
 
   useEffect(() => {
@@ -44,7 +50,6 @@ const SliderDesktop = () => {
       document.body.classList.remove("overlay");
     }
   }, [isLightboxOpen]);
-
   return (
     <>
       <div className="sliderContainerDesktop">
