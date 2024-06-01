@@ -1,6 +1,6 @@
 # Frontend Mentor - E-commerce product page solution
 
-This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6).
 
 ## Table of contents
 
@@ -29,6 +29,7 @@ Users should be able to:
 ### Screenshot
 
 <!-- ![](./src/assets/screenshotMobile.jpg) -->
+
 ![](./src/assets/screenshotDesktop.jpg)
 
 ### Links
@@ -64,5 +65,5 @@ Completing this challenge demonstrates proficiency in several key areas:
 ## Author
 
 - Website - [Letizia](https://letiziasorrentino.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/letizia-sorrentino)
+- Frontend Mentor - [@letizia-sorrentino](https://www.frontendmentor.io/profile/letizia-sorrentino)
 - LinkedIn - [@letiziasorrentino](https://www.linkedin.com/in/letiziasorrentino/)
