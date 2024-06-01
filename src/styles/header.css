@@ -66,6 +66,10 @@
 }
 
 /* Account */
+.cartIconContainer {
+  position: relative;
+}
+
 .cartIcon {
   width: 1rem;
   height: 1rem;
@@ -78,8 +82,7 @@
 
 .quantitySticker {
   position: absolute;
-  top: 0.9rem;
-  right: 3.1rem;
+  right: 0.1rem;
   background-color: hsl(26, 100%, 55%);
   color: hsl(0, 0%, 100%);
   width: 0.75rem;
@@ -153,12 +156,6 @@
 
   .rightContainer {
     margin-left: 10rem;
-  }
-
-  .quantitySticker {
-    position: absolute;
-    top: 2.75rem;
-    right: 17%;
   }
 
   .avatar {
