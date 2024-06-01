@@ -12,14 +12,13 @@
   left: 1.5rem;
   right: 1rem;
   z-index: 2;
-  height: 40vh;
+  box-shadow: 0 1rem 1rem 0.25rem hsla(0, 0%, 0%, 0.3);
 }
 
 .modalTitle {
   font-size: 0.75rem;
   padding: 0.5rem 0 0.75rem 1rem;
   border-bottom: 1px solid hsla(0, 0%, 50%, 0.1);
-
 }
 
 .basketContainer {
@@ -90,7 +89,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   padding: 1rem 0;
-  width: 80vw;
+  width: 80%;
   margin-bottom: 4rem;
 
 }
@@ -98,8 +97,8 @@
 /* Media Queries */
 @media (min-width:960px) {
   .showModal {
+    top: 16.5%;
     left: 70vw;
-    height: 30vh;
     outline: 1px solid hsla(0, 0%, 50%, 0.1);
     z-index: 3;
   }

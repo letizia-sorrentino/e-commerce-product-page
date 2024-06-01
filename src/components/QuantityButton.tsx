@@ -36,7 +36,6 @@ const QuantityButton = () => {
             dispatch(removeFromCart(cartItem.productId));
           } else if (cartItem.quantity > 1) {
             dispatch(decreaseQuantity(cartItem.productId));
-            console.log(cartItem);
           }
         }}
       />
@@ -50,7 +49,6 @@ const QuantityButton = () => {
             dispatch(addToCart(cartItem));
           } else {
             dispatch(increaseQuantity(cartItem.productId));
-            console.log(cartItem);
           }
         }}
       />

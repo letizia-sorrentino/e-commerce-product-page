@@ -16,8 +16,8 @@
     font-weight: 700;
     font-size: 0.9rem;
     background-color: hsl(26, 92%, 90%);
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.25rem;
     margin-left: 1rem;
 }
 
@@ -57,34 +57,36 @@
     }
 
     .brand {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         margin-bottom: 0;
     }
 
     .productName {
-        margin-top: 0.5rem;
-        font-size: 2.75rem;
+        margin: 0.5rem 0;
+        font-size: 2rem;
     }
 
     .productDescription {
-        margin-top: 0;
-        font-size: 1rem;
+        margin: 0.5rem 0;
+        font-size: 0.75rem;
     }
 
     .priceContainer {
         display: grid;
         grid-template-rows: auto auto;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 25% 1fr;
         grid-template-areas:
             "discounted discount"
             "full full";
         justify-items: start;
         width: 30vw;
+        margin-top: 0.5rem;
     }
 
     .discountedPrice {
         grid-area: discounted;
         margin: 0;
+        font-size: 1rem;
     }
 
     .discount {

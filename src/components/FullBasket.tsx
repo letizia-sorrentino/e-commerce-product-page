@@ -41,7 +41,6 @@ const FullBasket = () => {
             alt="deleteButton"
             onClick={() => {
               dispatch(clearCart());
-              console.log("items deleted");
             }}
           />
         </div>

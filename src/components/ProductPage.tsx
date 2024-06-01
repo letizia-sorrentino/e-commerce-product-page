@@ -6,18 +6,16 @@ import AddToCart from "./AddToCart";
 import { fetchProducts, selectProducts } from "../redux/productSlice";
 import "../styles/productPage.css";
 import { store } from "../redux/store";
-//import { initialState } from "../redux/cartSlice";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
-  //const [data] = useState(initialState);
 
   //send products to the store
   useEffect(() => {
     const fetchedProducts = [data];
     store.dispatch(fetchProducts(fetchedProducts));
-    console.log(data);
+    // console.log(data);
   }, [dispatch]);
 
   return (

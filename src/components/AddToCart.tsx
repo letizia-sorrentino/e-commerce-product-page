@@ -22,7 +22,7 @@ const AddToCart = () => {
               } else {
                 dispatch(addToCart(product));
               }
-              console.log(product);
+              // console.log(product);
             }}
           >
             Add to cart
