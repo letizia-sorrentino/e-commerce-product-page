@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/screenshotMobile.jpg)
+<!-- ![](./src/assets/screenshotMobile.jpg) -->
 ![](./src/assets/screenshotDesktop.jpg)
 
 ### Links
