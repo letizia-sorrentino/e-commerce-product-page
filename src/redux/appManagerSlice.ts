@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
+//define the state type for the appManager
 type StateType = {
   images: string[];
   currentIndex: number;
@@ -8,7 +9,7 @@ type StateType = {
   basketOpen: boolean;
 };
 
-
+//define the initial state for the appManager
 const initialState: StateType = {
   images: [],
   currentIndex: 0,
@@ -17,10 +18,12 @@ const initialState: StateType = {
   
 };
 
+//create the appManager slice
 export const appManagerSlice = createSlice({
   name: "appManager",
   initialState,
   reducers: {
+   
     //set the images in the state
     setImages: (state, action) => {
       state.images = action.payload;
@@ -37,32 +40,39 @@ export const appManagerSlice = createSlice({
       state.currentIndex = (state.currentIndex + 1) % state.images.length;
     },
 
+  //open the burger menu
     openBurger: (state) => {
       state.burgerOpen = true;
     },
 
+    //close the burger menu
     closeBurger: (state) => {
       state.burgerOpen = false;
     },
 
+    //toggle the burger menu
     toggleBurger: (state) => {
       state.burgerOpen = !state.burgerOpen;
     },
 
+    //open the basket
     openBasket: (state) => {
       state.basketOpen = true;
     },
 
+    //close the basket
     closeBasket: (state) => {
       state.basketOpen = false;
     },
 
+    //toggle the basket
     toggleBasket: (state) => {
       state.basketOpen = !state.basketOpen;
     },
   },
 });
 
+//export the actions
 export const {
   setImages,
   nextImage,
@@ -74,6 +84,8 @@ export const {
   closeBasket,
   toggleBasket,
 } = appManagerSlice.actions;
+
+//selectors
 export const selectImages = (state: RootState) => state.appManager.images;
 export const selectCurrentIndex = (state: RootState) =>
   state.appManager.currentIndex;

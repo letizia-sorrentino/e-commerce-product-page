@@ -32,8 +32,9 @@
         cursor: pointer;
     }
 
-    .sliderDotDesktop:active {
-        outline: solid hsl(26, 100%, 55%);
+    .sliderDotDesktop.activeDot {
+        opacity: 0.5;
+        outline: 2px solid hsl(26, 100%, 55%);
     }
 
     body.overlay .lightboxContainer {
@@ -61,6 +62,7 @@
 
     .iconClose:hover {
         fill: hsl(26, 100%, 55%);
+        cursor: pointer;
     }
 
     .arrowPrev {
@@ -88,6 +90,7 @@
     .arrowPrev:hover,
     .arrowNext:hover {
         stroke: hsl(26, 100%, 55%);
+        cursor: pointer;
     }
 
     .sliderDotsLightbox {
@@ -109,8 +112,9 @@
         cursor: pointer;
     }
 
-    .sliderDotLightbox:active {
-        outline: solid hsl(26, 100%, 55%);
+    .sliderDotLightbox.activeDot {
+        opacity: 0.5;
+        outline: 2px solid hsl(26, 100%, 55%);
     }
 
 }

@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   clearCart,
   getTotal,
-  // removeFromCart,
   selectItems,
   selectTotalCost,
   selectTotalItems,
 } from "../redux/cartSlice";
 import productImage from "../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../assets/icon-delete.svg";
+
 const FullBasket = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectItems);
@@ -27,9 +27,7 @@ const FullBasket = () => {
           <img src={productImage} className="productImage" alt="productImage" />
           {cartItems.map((cartItem, index) => (
             <div className="cartItemContainer" key={index}>
-              <p className="cartItemName">
-                {cartItem.name}
-              </p>
+              <p className="cartItemName">{cartItem.name}</p>
               <div className="cartItemTotal">
                 {" "}
                 <p className="cartItemPrice">${cartItem.price} x</p>

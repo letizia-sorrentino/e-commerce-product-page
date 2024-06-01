@@ -77,7 +77,7 @@ export const cartSlice = createSlice({
       );
     },
 
-    //
+    //Calculating the total number of items and the total cost
     getTotal: (state) => {
       let itemsQuantity = 0;
       let total = 0;
@@ -92,6 +92,7 @@ export const cartSlice = createSlice({
     // Empty the cart
     clearCart: (state) => {
       state.items = [];
+      state.totalItems = 0;
     },
   },
 });
