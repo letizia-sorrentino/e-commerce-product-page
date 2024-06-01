@@ -27,11 +27,9 @@ const Slider = () => {
 
   const prev = () => {
     dispatch(prevImage());
-    console.log(currentIndex, images);
   };
   const next = () => {
     dispatch(nextImage());
-    console.log(currentIndex, images);
   };
 
   return (

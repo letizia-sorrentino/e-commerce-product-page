@@ -49,6 +49,12 @@
         margin: auto;
     }
 
+    .iconClose {
+        position: absolute;
+        top: 10%;
+        right: 35%;
+    }
+
     .arrowPrev {
         position: absolute;
         top: 45%;

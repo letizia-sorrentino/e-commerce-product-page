@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import iconNext from "../assets/icon-next.svg";
 import iconPrev from "../assets/icon-previous.svg";
+import iconClose from "../assets/icon-close.svg";
 import image1 from "../assets/image-product-1.jpg";
 import image2 from "../assets/image-product-2.jpg";
 import image3 from "../assets/image-product-3.jpg";
 import image4 from "../assets/image-product-4.jpg";
 import {
-  setCurrentImage,
   openLightbox,
-  setCurrentIndex,
+  closeLightbox,
   selectIsOpen,
   selectCurrentIndex,
   setLightboxImages,
@@ -23,20 +23,22 @@ const SliderDesktop = () => {
   const dispatch = useDispatch();
   const images = useSelector(selectLightboxImages);
   const currentIndex = useSelector(selectCurrentIndex);
-  const lightboxIndex = useSelector(selectCurrentIndex);
   const isLightboxOpen = useSelector(selectIsOpen);
+
+  const open = () => {
+    dispatch(openLightbox());
+  };
 
   const prev = () => {
     dispatch(setPreviousImage());
-    console.log(currentIndex);
   };
   const next = () => {
     dispatch(setNextImage());
-    console.log(currentIndex);
   };
-  useEffect(() => {
-    console.log(lightboxIndex);
-  }, [lightboxIndex]);
+
+  const close = () => {
+    dispatch(closeLightbox());
+  };
 
   useEffect(() => {
     const fetchedImages = [image1, image2, image3, image4];
@@ -61,17 +63,19 @@ const SliderDesktop = () => {
             }`}
             src={image}
             alt={`productImageDesktop ${index + 1}`}
-            onClick={() => {
-              dispatch(setCurrentImage(image));
-              dispatch(setCurrentIndex(index));
-              dispatch(openLightbox());
-              console.log(currentIndex);
-            }}
+            onClick={open}
           />
         ))}
+
         {/* If isLightboxOpen is true, render the Lightbox component. Otherwise, render nothing. */}
         {isLightboxOpen && (
           <div className="lightboxContainer">
+            <img
+              className="iconClose"
+              src={iconClose}
+              onClick={close}
+              alt="icon-close"
+            />
             <img
               className="arrowPrev"
               src={iconPrev}
@@ -88,11 +92,7 @@ const SliderDesktop = () => {
                   }`}
                   src={image}
                   alt={`productImageDesktop ${index + 1}`}
-                  onClick={() => {
-                    dispatch(setCurrentImage(image));
-                    dispatch(setCurrentIndex(index));
-                    console.log(currentIndex);
-                  }}
+                  onClick={next}
                 />
               ))}
             </div>
@@ -111,10 +111,11 @@ const SliderDesktop = () => {
                     index === currentIndex ? "activeDot" : "inactiveDot"
                   }`}
                   src={images[index]}
-                  onClick={() => {
-                    dispatch(setCurrentImage(images[index]));
-                    dispatch(setCurrentIndex(index));
-                  }}
+                  // onClick={() => {
+                  //   dispatch(setCurrentImage(images[index]));
+                  //   dispatch(setCurrentIndex(index));
+                  // }}
+                  onClick={next}
                 ></img>
               ))}
             </div>
@@ -129,10 +130,7 @@ const SliderDesktop = () => {
                 index === currentIndex ? "activeDot" : "inactiveDot"
               }`}
               src={images[index]}
-              onClick={() => {
-                dispatch(setCurrentImage(images[index]));
-                dispatch(setCurrentIndex(index));
-              }}
+              onClick={next}
             ></img>
           ))}
         </div>
