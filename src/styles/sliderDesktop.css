@@ -13,7 +13,6 @@
         width: 30vw;
         border-radius: 0.5rem;
         margin-bottom: 1rem;
-
     }
 
     .sliderDotsDesktop {
@@ -31,6 +30,9 @@
     .sliderDotDesktop:hover {
         opacity: 0.5;
         cursor: pointer;
+    }
+
+    .sliderDotDesktop:active {
         outline: solid hsl(26, 100%, 55%);
     }
 
@@ -53,6 +55,12 @@
         position: absolute;
         top: 10%;
         right: 35%;
+        fill: hsl(219, 9%, 45%);
+        fill-rule: evenodd;
+    }
+
+    .iconClose:hover {
+        fill: hsl(26, 100%, 55%);
     }
 
     .arrowPrev {
@@ -60,6 +68,10 @@
         top: 45%;
         left: 32%;
         transform: translateY(-50%);
+        fill: none;
+        fill-rule: evenodd;
+        stroke: hsl(220, 13%, 13%);
+        stroke-width: 3;
     }
 
     .arrowNext {
@@ -67,6 +79,15 @@
         top: 45%;
         right: 32%;
         transform: translateY(-50%);
+        fill: none;
+        fill-rule: evenodd;
+        stroke: hsl(220, 13%, 13%);
+        stroke-width: 3;
+    }
+
+    .arrowPrev:hover,
+    .arrowNext:hover {
+        stroke: hsl(26, 100%, 55%);
     }
 
     .sliderDotsLightbox {
@@ -86,9 +107,10 @@
     .sliderDotLightbox:hover {
         opacity: 0.5;
         cursor: pointer;
-        outline: solid hsl(26, 100%, 55%);
     }
 
-
+    .sliderDotLightbox:active {
+        outline: solid hsl(26, 100%, 55%);
+    }
 
 }
