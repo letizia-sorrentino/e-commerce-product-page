@@ -44,12 +44,12 @@
 /* Full basket */
 .fullBasket {
   display: flex;
-  width: 80vw;
   padding: 0.75rem 0;
   font-size: 0.75rem;
   align-items: center;
   background-color: hsl(0, 0%, 100%);
   justify-content: space-between;
+  width: 80%;
 }
 
 .productImage {
@@ -64,22 +64,30 @@
 
 .cartItemName {
   margin-block: 0;
-  margin-inline: 1rem;
-  color: hsl(220, 14%, 75%);
-  font-size: 0.9rem;
+  color: hsl(219, 9%, 45%);
+  font-size: 0.8rem;
   font-weight: 400;
+}
+
+.cartItemPrice {
+  margin: 0;
 }
 
 .cartItemTotal {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-inline: 1rem;
-  color: hsl(220, 14%, 75%);
+  color: hsl(219, 9%, 45%);
+  margin-block: 0;
+}
+
+.quantity {
+  margin: 0;
 }
 
 .total {
   font-weight: 600;
   color: hsl(0, 0%, 0%);
+  margin: 0;
 }
 
 .checkoutButton {

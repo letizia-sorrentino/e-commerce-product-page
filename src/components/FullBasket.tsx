@@ -31,7 +31,7 @@ const FullBasket = () => {
               <div className="cartItemTotal">
                 {" "}
                 <p className="cartItemPrice">${cartItem.price} x</p>
-                <p>{totalItems}</p>
+                <p className="quantity">{totalItems}</p>
                 <p className="total"> ${totalCost}</p>{" "}
               </div>
             </div>

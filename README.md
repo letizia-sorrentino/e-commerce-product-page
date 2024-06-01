@@ -13,7 +13,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-
 ## Overview
 
 ### The challenge
@@ -46,19 +45,19 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
-
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - CSS Grid and Flexbox layout
 - Mobile-first workflow
-- [Vite] (https://vitejs.dev/) - for building the project 
+- [Vite] (https://vitejs.dev/) - for building the project
 - [TypeScript] (https://www.typescriptlang.org/) - for type checking
 - [React](https://reactjs.org/) - JS library for building the UI
 - [Redux Toolkit](https://redux-toolkit.js.org) - redux toolkit package for state management
 
 ### What I learned
+
 Completing this challenge demonstrates proficiency in several key areas:
 
 - User Interaction Design: Enhancing user experience through intuitive design.
@@ -68,7 +67,7 @@ Completing this challenge demonstrates proficiency in several key areas:
 - State Management: Using tools like Redux Toolkit for maintaining application state.
 - DOM Manipulation: Updating the Document Object Model dynamically.
 - Responsive Design and Layout: Ensuring the application works seamlessly across different devices and screen sizes.
- 
+
 ## Author
 
 - Website - [Letizia](https://letiziasorrentino.com)
