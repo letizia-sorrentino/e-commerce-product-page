@@ -43,8 +43,8 @@ Users should be able to:
 - CSS custom properties
 - CSS Grid and Flexbox layout
 - Mobile-first workflow
-- [Vite] (https://vitejs.dev/) - for building the project
-- [TypeScript] (https://www.typescriptlang.org/) - for type checking
+- [Vite](https://vitejs.dev/) - for building the project
+- [TypeScript](https://www.typescriptlang.org/) - for type checking
 - [React](https://reactjs.org/) - JS library for building the UI
 - [Redux Toolkit](https://redux-toolkit.js.org) - redux toolkit package for state management
 
