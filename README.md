@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://www.frontendmentor.io/solutions/ecommerce-product-page-Ceau_hh0iU)
-- [live Site URL](candid-melomakarona-b838d4.netlify.app/)
+- [Live Site URL](candid-melomakarona-b838d4.netlify.app/)
 
 ## My process
 
